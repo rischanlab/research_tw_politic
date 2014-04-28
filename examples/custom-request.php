@@ -7,7 +7,9 @@ include 'constants.php';
 $twitter = new Twitter($consumerKey, $consumerSecret, $accessToken, $accessTokenSecret);
 
 // See https://dev.twitter.com/docs/api/1.1
-$statuses = $twitter->request('statuses/retweets_of_me', 'GET', array('count' => 100));
+//$statuses = $twitter->request('statuses/retweets_of_me', 'GET', array('count' => 100)); //return the most recent tweets that have been retweeted by others
+// return collection of recent tweets.
+$statuses = $twitter->request('statuses/user_timeline', 'GET', array('count' => 20)); 
 
 ?>
 <!doctype html>
