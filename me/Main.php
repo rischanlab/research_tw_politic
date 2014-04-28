@@ -1,5 +1,8 @@
 <?php
 
+
+$file = "bio.txt";
+$fh = fopen($file, 'a') or die("can't open file");
 // set correct path!
 require_once 'getAPI.php';
 // change screen name to yours
@@ -8,9 +11,13 @@ $tw_account = array("alkwangju","kicaupemilu","rischanmafrur");
 $tw_many = count($tw_account);
 
 for($i=0; $i<$tw_many; $i++){
-	print_r(getBio($tw_account[$i]));
-	
+	$data = (getBio($tw_account[$i]));
+		echo $data['name'] .",". $data['followers'] .",". $data['friends'] .",". $data['protected'] .",". $data['created_at'] .",". $data['favourites_count'] .",". $data['listed'] .",". $data['status'] .",". $data['location'] .",". $data['time_zone']  . "<br/>";
+		fwrite($fh, $data['name'] .",". $data['followers'] .",". $data['friends'] .",". $data['protected'] .",". $data['created_at'] .",". $data['favourites_count'] .",". $data['listed'] .",". $data['status'] .",". $data['location'] .",". $data['time_zone']  . PHP_EOL);
 }
+
+fclose($fh);
+
 
 // $data = getBio($tw_account);
 // print_r($data);
