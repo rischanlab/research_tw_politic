@@ -1,6 +1,7 @@
 <?php
 
 require_once '../src/twitter.class.php';
+include 'constants.php';
 
 // ENTER HERE YOUR CREDENTIALS (see readme.txt)
 $twitter = new Twitter($consumerKey, $consumerSecret, $accessToken, $accessTokenSecret);

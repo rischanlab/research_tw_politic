@@ -1,12 +1,13 @@
 <?php
 
 require_once '../src/twitter.class.php';
+include 'constants.php';
 
 
 // ENTER HERE YOUR CREDENTIALS (see readme.txt)
 $twitter = new Twitter($consumerKey, $consumerSecret, $accessToken, $accessTokenSecret);
 
-$results = $twitter->search('#nette');
+$results = $twitter->search('#TolakPartaiPoligami');
 // or use hashmap: $results = $twitter->search(array('q' => '#nette', 'geocode' => '50.088224,15.975611,20km'));
 
 ?>

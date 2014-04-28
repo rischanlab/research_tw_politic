@@ -1,6 +1,7 @@
 <?php
 
 require_once '../src/twitter.class.php';
+include 'constants.php';
 
 // enables caching (path must exists and must be writable!)
 // Twitter::$cacheDir = dirname(__FILE__) . '/temp';
