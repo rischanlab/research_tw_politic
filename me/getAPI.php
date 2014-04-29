@@ -31,9 +31,16 @@ function getBio ($screenName){
                  ->performRequest();
      
             $data = json_decode($response);
+            $screen_name = $data->screen_name; 
             $followers = $data->followers_count;
             $friends =  $data->friends_count;
             $protected = $data->protected;
+            if ($protected==false) {
+                $p = "false";
+            } else {
+                $p = "true";
+            }
+            
             $created_at = $data->created_at;
             $favourites_count = $data->favourites_count;
             $listed_count = $data->listed_count;
@@ -42,9 +49,10 @@ function getBio ($screenName){
             $location = $data->location;
 
             $bio = array(
+                "name" => $screen_name,
                 "followers" => $followers, 
                 "friends" => $friends,
-                "protected" => $protected,
+                "protected" => $p,
                 "created_at" => $created_at,
                 "favourites_count" => $favourites_count,
                 "listed" => $listed_count,
