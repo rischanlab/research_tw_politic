@@ -1,4 +1,10 @@
 <?php
+
+/** Just simple code for getting Bio twitter Account  **/
+/** Rischan Mafrur  **/
+/** April 28 2014   **/
+
+
 	ini_set('display_errors', true);
 	
 

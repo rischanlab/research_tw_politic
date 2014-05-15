@@ -1,8 +1,8 @@
 <?php
 
-
-
-
+/** Just simple code for getting Bio twitter Account  **/
+/** Rischan Mafrur  **/
+/** April 28 2014   **/
 
 $file = "bio.txt";
 $fh = fopen($file, 'a') or die("can't open file");
